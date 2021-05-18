@@ -152,6 +152,239 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-并发-多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/18/%E5%B9%B6%E5%8F%91-%E5%A4%9A%E7%BA%BF%E7%A8%8B/">并发/多线程</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/18/%E5%B9%B6%E5%8F%91-%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2021-03-18T13:46:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="并发编程基础"><a href="#并发编程基础" class="headerlink" title="并发编程基础"></a>并发编程基础</h2><h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h2 id="并发容器"><a href="#并发容器" class="headerlink" title="并发容器"></a>并发容器</h2><h2 id="原子类"><a href="#原子类" class="headerlink" title="原子类"></a>原子类</h2><h2 id="juc并发工具类"><a href="#juc并发工具类" class="headerlink" title="juc并发工具类"></a>juc并发工具类</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/18/%E5%B9%B6%E5%8F%91-%E5%A4%9A%E7%BA%BF%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/18/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/18/Java%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2021-03-18T09:00:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><ul>
+<li>对象：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</li>
+<li>类：类是一个模板，它描述一类对象的行为和状态。</li>
+<li>方法：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的。</li>
+<li>实例变量：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
+</ul>
+<h3 id="访问控制符"><a href="#访问控制符" class="headerlink" title="访问控制符"></a>访问控制符</h3><p>default (即默认，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。<br>private : 在同一类内可见。使用对象：变量、方法。 注意：不能修饰类（外部类）<br>public : 对所有类可见。使用对象：类、接口、变量、方法<br>protected : 对同一包内的类和所有子类可见。使用对象：变量、方法。 注意：不能修饰类（外部类）。</p>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>将类的某些信息隐藏在类内部，不允许外部程序直接访问，而是通过该类提供的方法来实现对隐藏信息的操作和访问。</p>
+<p>只能通过规定的方法访问数据。隐藏类的实例细节，方便修改和实现。<br><img src="http://mmbiz.qpic.cn/mmbiz_png/eDpwXmSEM4FapB3rEuobaNxloC3y47DZicjIRoeaxBsvwXvPeFewJPJ2AmhVicdXskxic6exVwiaROtolq0Ua6HZyg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="Alt text"></p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承就是子类继承父类的特征和行为，使得子类对象（实例）具有父类的实例域和方法，或子类从父类继承方法，使得子类具有父类相同的行为。<br><img src="https://www.runoob.com/wp-content/uploads/2013/12/java-extends-2020-12-08.png" alt="Alt text"><br>使用 implements 关键字可以变相的使java具有多继承的特性，使用范围为类继承接口的情况，可以同时继承多个接口（接口跟接口之间采用逗号分隔）<br>public class C implements A,B {}</p>
+<p>子类是不继承父类的构造器（构造方法或者构造函数）的，它只是调用（隐式或显式）。如果父类的构造器带有参数，则必须在子类的构造器中显式地通过 super 关键字调用父类的构造器并配以适当的参数列表。<br>如果父类构造器没有参数，则在子类的构造器中不需要使用 super 关键字调用父类构造器，系统会自动调用父类的无参构造器。</p>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态是同一个行为具有多个不同表现形式或形态的能力；消除类型之间的耦合关系。<br>多态就是同一个接口，使用不同的实例而执行不同操作，如图所示：<br><img src="https://www.runoob.com/wp-content/uploads/2013/12/java-polymorphism-111.png" alt="Alt text"></p>
+<h3 id="Java-重写-Override-与重载-Overload"><a href="#Java-重写-Override-与重载-Overload" class="headerlink" title="Java 重写(Override)与重载(Overload)"></a>Java 重写(Override)与重载(Overload)</h3><p>重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！<br>重写的好处在于子类可以根据需要，定义特定于自己的行为。 也就是说子类能够根据需要实现父类的方法。</p>
+<p>重载(overloading) 是在一个类里面，方法名字相同，而参数不同。返回类型可以相同也可以不同。<br>每个重载的方法（或者构造函数）都必须有一个独一无二的参数类型列表。<br>最常用的地方就是构造器的重载。</p>
+<p>方法的重写(Overriding)和重载(Overloading)是java多态性的不同表现，重写是父类与子类之间多态性的一种表现，重载可以理解成多态的具体表现形式。<br><img src="https://www.runoob.com/wp-content/uploads/2013/12/overloading-vs-overriding.png" alt="Alt text"></p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>类描述对象的属性和方法。接口则包含类要实现的方法。<br>除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。<br>接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。</p>
+<h3 id="标记接口"><a href="#标记接口" class="headerlink" title="标记接口"></a>标记接口</h3><p>public interface EventListener{}<br>建立一个公共的父接口：<br>正如EventListener接口，这是由几十个其他接口扩展的Java API，你可以使用一个标记接口来建立一组接口的父接口。例如：当一个接口继承了EventListener接口，Java虚拟机(JVM)就知道该接口将要被用于一个事件的代理方案。</p>
+<p>向一个类添加数据类型：<br>这种情况是标记接口最初的目的，实现标记接口的类不需要定义任何接口方法(因为标记接口根本就没有方法)，但是该类通过多态性变成一个接口类型。</p>
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p><img src="https://www.runoob.com/wp-content/uploads/2020/06/ArrayList-1-768x406-1.png" alt="Alt text"><br>ArrayList 类是一个可以动态修改的数组，与普通数组的区别就是它是没有固定大小的限制，我们可以添加或删除元素。</p>
+<ul>
+<li>频繁访问列表中的某一个元素。</li>
+<li>只需要在列表末尾进行添加和删除元素操作。</li>
+</ul>
+<p>LinkedList 是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的地址。</p>
+<ul>
+<li>你需要通过循环迭代来访问列表中的某些元素。</li>
+<li>需要频繁的在列表开头、中间、末尾等位置进行添加和删除元素操作。</li>
+</ul>
+<p>HashSet 基于 HashMap 来实现的，是一个不允许有重复元素的集合。<br>HashSet 允许有 null 值。<br>HashSet 是无序的，即不会记录插入的顺序。<br>HashSet 不是线程安全的， 如果多个线程尝试同时修改 HashSet，则最终结果是不确定的。 您必须在多线程访问时显式同步对 HashSet 的并发访问。</p>
+<p>HashMap 是一个散列表，它存储的内容是键值对(key-value)映射。<br>HashMap 实现了 Map 接口，根据键的 HashCode 值存储数据，具有很快的访问速度，最多允许一条记录的键为 null，不支持线程同步。<br>HashMap 是无序的，即不会记录插入的顺序。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_28312631/article/details/47418773">谈谈ConcurrentHashMap1.7和1.8的不同实现</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/103189874">Hashmap的结构，1.7和1.8有哪些区别，史上最深入的分析</a></p>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p><img src="https://www.runoob.com/wp-content/uploads/2013/12/12-130Q1234I6223.jpg" alt="Alt text"><br>使用 try 和 catch 关键字可以捕获异常。try/catch 代码块放在异常可能发生的地方。<br>一个 try 代码块后面跟随多个 catch 代码块的情况就叫多重捕获。<br>如果一个方法没有捕获到一个检查性异常，那么该方法必须使用 throws 关键字来声明。throws 关键字放在方法签名的尾部。</p>
+<h3 id="声明自定义异常"><a href="#声明自定义异常" class="headerlink" title="声明自定义异常"></a>声明自定义异常</h3><p>所有异常都必须是 Throwable 的子类。<br>如果希望写一个检查性异常类，则需要继承 Exception 类。<br>如果你想写一个运行时异常类，那么需要继承 RuntimeException 类。</p>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>泛型提供了编译时类型安全检测机制，该机制允许程序员在编译时检测到非法的类型。泛型的本质是参数化类型，也就是说所操作的数据类型被指定为一个参数。<br>假定我们有这样一个需求：写一个排序方法，能够对整型数组、字符串数组甚至其他任何类型的数组进行排序，该如何实现？<br>答案是可以使用 Java 泛型。<br>使用 Java 泛型的概念，我们可以写一个泛型方法来对一个对象数组排序。然后，调用该泛型方法来对整型数组、浮点数数组、字符串数组等进行排序。</p>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>如果注解难于理解，你就把它类同于标签，标签为了解释事物，注解为了解释代码。<br>注解的基本语法，创建如同接口，但是多了个 @ 符号。<br>注解的元注解。<br>注解的属性。<br>注解主要给编译器及工具类型的软件用的。<br>注解的提取需要借助于 Java 的反射技术，反射比较慢，所以注解使用时也需要谨慎计较时间成本。</p>
+<h2 id="I-O"><a href="#I-O" class="headerlink" title="I/O"></a>I/O</h2><h2 id="图形化（Swing）"><a href="#图形化（Swing）" class="headerlink" title="图形化（Swing）"></a>图形化（Swing）</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/18/Java%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Spring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/17/Spring/">Spring</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/17/Spring/" class="archive-article-date">
+  	<time datetime="2021-03-17T11:22:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><p>Struts+Spring+Hibernate</p>
+<h2 id="SSM"><a href="#SSM" class="headerlink" title="SSM"></a>SSM</h2><p>SpringMVC+Spring+Mybatis</p>
+<h2 id="ORM"><a href="#ORM" class="headerlink" title="ORM"></a>ORM</h2><p>ORM就是对象关系匹配，是为了解决面向对象与关系数据库存在的互不匹配的问题。简单来说，就是把关系数据库中的数据转换成面向对象程序中的对象。<br>常用的ORM框架有Hibernate和MyBatis，也就是ssh组合和ssm组合中的h与m。</p>
+<h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><h3 id="IOC-控制反转"><a href="#IOC-控制反转" class="headerlink" title="IOC(控制反转)"></a>IOC(控制反转)</h3><p>通俗地讲，就是把原本需要程序员自己创建和维护的一大堆bean统统交由Spring管理。<br><img src="https://pic4.zhimg.com/80/v2-c0273f7d3641d4e52f0bf4dd6d64fb92_720w.jpg?source=1940ef5c" alt="Alt text"><br>也就是说，Spring将我们从盘根错节的依赖关系中解放了。当前对象如果需要依赖另一个对象，只要打一个@Autowired注解，Spring就会自动帮你安装上。<br><img src="https://pic4.zhimg.com/80/v2-c0273f7d3641d4e52f0bf4dd6d64fb92_720w.jpg?source=1940ef5c" alt="Alt text"></p>
+<h3 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP(面向切面编程)"></a>AOP(面向切面编程)</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/37497663">AOP</a></p>
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><h2 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h2><p>它的目标是简化Spring应用和服务的创建、开发与部署，简化了配置文件；starter开箱即用</p>
+<h3 id="整合权限"><a href="#整合权限" class="headerlink" title="整合权限"></a>整合权限</h3><p>Shiro<br>认证、授权、加密、会话管理、与Web 集成、缓存</p>
+<p>SpringSecurity</p>
+<h2 id="Spring-Data"><a href="#Spring-Data" class="headerlink" title="Spring Data"></a>Spring Data</h2><p>是一个数据访问及操作的工具集，封装了多种数据源的操作能力，包括：jdbc、Redis、MongoDB等。</p>
+<h2 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h2><p>微服务解决方案；简化了分布式系统的开发，集成了服务发现、配置管理、消息总线、负载均衡、断路器、数据监控等各种服务治理能力。比如sleuth提供了全链路追踪能力，Netflix套件提供了hystrix熔断器、zuul网关等众多的治理组件。config组件提供了动态配置能力，bus组件支持使用RabbitMQ、kafka、Activemq等消息队列，实现分布式服务之间的事件通信。</p>
+<h2 id="Spring-Security"><a href="#Spring-Security" class="headerlink" title="Spring Security"></a>Spring Security</h2><p>主要用于快速构建安全的应用程序和服务，在Spring Boot和Spring Security OAuth2的基础上，可以快速实现常见安全模型，如单点登录，令牌中继和令牌交换。你可以了解一下oauth2授权机制和jwt认证方式。oauth2是一种授权机制，规定了完备的授权、认证流程。JWT全称是JSON Web Token，是一种把认证信息包含在token中的认证实现，oauth2授权机制中就可以应用jwt来作为认证的具体实现方法。</p>
+<p>shiro框架是一个与spring security类似的开源的权限管理框架，用于访问授权、认证、加密及会话管理。能够支持单机与分布式session管理。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/17/Spring/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Redis学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

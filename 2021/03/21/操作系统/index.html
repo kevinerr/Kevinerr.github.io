@@ -16,7 +16,7 @@
 <meta property="og:description" content="概述并发、共享、虚拟、异步计算机系统资源的管理者；用户与计算机硬件之间的接口；扩充机器（工人） 进程&#x2F;线程1、进程是什么？      是具有一定独立功能的程序、它是系统进行资源分配和调度的一个独立单位，重点在系统调度和单独的单位，也就是说进程是可以独          立运行的一段程序。    2、线程又是什么？       线程进程的一个实体，是CPU调度和分派的基本单位，他是比进程更小的能独">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-21T15:55:27.000Z">
-<meta property="article:modified_time" content="2021-04-16T08:29:51.629Z">
+<meta property="article:modified_time" content="2021-04-19T08:54:40.416Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -186,6 +186,135 @@
 <h2 id="内存管理和调度"><a href="#内存管理和调度" class="headerlink" title="内存管理和调度"></a>内存管理和调度</h2><p>连续分配、非连续分配、虚拟内存、请求分页、页面置换、页面分配、地址翻译（页号比较页表长度–页表项是否在快表中–页表中（在，修改访问位和修改位）–缺页中断外存中找缺页–调页或页面置换–修改页表）</p>
 <h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><p>文件的逻辑结构、目录结构（FCB、索引节点）、文件共享、文件保护<br>文件分配（连续、链接、索引分配）、文件存储空间管理（空闲表法、链表法、位示图法、成组链接法）<br>磁盘（访问时间、调度算法、磁盘的管理（初始块、引导块、坏块））</p>
 <h2 id="I-O原理"><a href="#I-O原理" class="headerlink" title="I/O原理"></a>I/O原理</h2><p>I/O控制方式（程序直接控制、中断、DMA、通道控制方式）<br>I/O层次结构（用户层I/O、设备独立性软件、设备驱动器、中断处理层、硬件层）<br>缓冲区、设备分配、SPOOLing系统</p>
+<p>var app = getApp();<br>var userID;<br>var that</p>
+<p>// var timer = require(‘/utils/wxTimer.js’);<br>Page({<br>  data: {<br>    countDownSecond: 20,<br>    score:0,<br>    index: 0,  // 题目序列<br>    chooseValue: [], // 选择的答案序列<br>    totalScore: 100, // 总分<br>    wrong: 0, // 错误的题目数量<br>    allList:[],<br>    wrongList: [], // 错误的题目集合-乱序<br>    wrongListSort: [], // 错误的题目集合-正序<br>    shuffleIndex: [],<br>    questionList:[],<br>    rival: “”,<br>  },<br>  // 页面渲染完成后 调用<br>  onShow: function () {<br>    // var sec = 10;</p>
+<pre><code>// var interval = setInterval(function () &#123;
+//   // 秒数
+
+  
+//   var secStr = sec.toString();
+//   console.log(secStr);
+//   if (secStr.length == 1) secStr = &#39;0&#39; + secStr;
+
+//   this.setData(&#123;
+//     countDownSecond: secStr,
+//   &#125;);
+//   sec--;
+//   console.log(sec);
+//   if (sec &lt; 0) &#123;
+//     clearInterval(interval);
+    
+//     wx.showToast(&#123;
+//       title: &#39;时间到，进入下一题&#39;,
+//     &#125;);
+//     this.setData(&#123;
+//       countDownSecond: &#39;10&#39;,
+//       index: this.data.index + 1
+//     &#125;);
+//   &#125;
+// &#125;.bind(this), 1000);
+</code></pre>
+<p>  },</p>
+<p>  onLoad: function (options) {<br>    that = this;<br>    userID = options.userID;</p>
+<pre><code>wx.request(&#123;
+  url: getApp().request_url + &#39;/getQuestion&#39;,
+  data: &#123;                                                           
+    // xh: userID,
+  &#125;,
+  method: &#39;POST&#39;,
+  header: &#123;
+    &#39;content-type&#39;: &#39;application/json&#39; // 默认值
+  &#125;,
+  success: function(res) &#123;
+    that.setData(&#123;
+      questionList: res.data,
+      rival: options.rival
+    &#125;)
+    console.log(that.data.questionList)
+  &#125;,
+&#125;)
+
+
+setTimeout(function () &#123;
+  wx.setNavigationBarTitle(&#123; title: options.testId &#125;) // 动态设置导航条标题
+
+
+console.log(that.data.questionList);
+
+let count = that.generateArray(0, that.data.questionList.length - 1); // 生成题序
+console.log(count);
+let num = 5;  
+that.setData(&#123;
+  shuffleIndex: that.shuffle(count).slice(0, num) // 生成随机题序 [2,0,3] 并截取num道题】
+  
+&#125;)
+console.log(that.data.shuffleIndex);
+  
+&#125;, 0)
+</code></pre>
+<p>  },<br>  /**<br>     * 生成一个从 start 到 end 的连续数组<br>     * @param start<br>     * @param end<br>     <em>/<br>    generateArray: function (start, end) {<br>      return Array.from(new Array(end + 1).keys()).slice(start)<br>    },<br>  /</em></p>
+<ul>
+<li>数组乱序/洗牌</li>
+<li>/<br>shuffle: function (arr) {<br> let i = arr.length;<br> while (i) {<br>   let j = Math.floor(Math.random() * i–);<br>   [arr[j], arr[i]] = [arr[i], arr[j]];<br> }<br> return arr;<br>},</li>
+</ul>
+<p>  /*</p>
+<ul>
+<li><p>单选事件</p>
+</li>
+<li><p>/<br>radioChange: function (e) {<br> console.log(‘checkbox发生change事件，携带value值为：’, e.detail.value)<br> this.data.chooseValue[this.data.index] = e.detail.value;<br> console.log(this.data.chooseValue);</p>
+<p> // 判断答案是否正确<br> this.chooseError();</p>
+<p> // 判断是不是最后一题<br> if (this.data.index &lt; this.data.shuffleIndex.length - 1) {<br>   // 渲染下一题<br>   this.setData({</p>
+<pre><code> index: this.data.index + 1
+</code></pre>
+<p>   })<br> } else {<br>   let wrongList = JSON.stringify(this.data.wrongList);<br>   let wrongListSort = JSON.stringify(this.data.wrongListSort);<br>   let chooseValue = JSON.stringify(this.data.chooseValue);<br>   wx.navigateTo({</p>
+<pre><code> url: &#39;../result-show/result-show?totalScore=&#39; + this.data.totalScore + &#39;&amp;wrongList=&#39; + wrongList + &#39;&amp;chooseValue=&#39; + chooseValue + &#39;&amp;wrongListSort=&#39; + wrongListSort + &#39;&amp;testId=&#39; + this.data.testId
+</code></pre>
+<p>   })</p>
+<p>   // 设置缓存<br>   var logs = wx.getStorageSync(‘logs’) || []<br>   let logsList = { “date”: Date.now(), “testId”: this.data.testId, “score”: this.data.totalScore }<br>   logs.unshift(logsList);<br>   wx.setStorageSync(‘logs’, logs);<br> }<br>},<br>/*</p>
+</li>
+<li><p>退出答题 按钮</p>
+</li>
+<li><p>/<br>outTest: function () {<br> wx.showModal({<br>   title: ‘提示’,<br>   content: ‘你真的要退出答题吗？’,<br>   success(res) {</p>
+<pre><code> if (res.confirm) &#123;
+   console.log(&#39;用户点击确定&#39;)
+   wx.navigateTo(&#123;
+     url: &#39;../solo-pk/solo-pk&#39;
+   &#125;)
+ &#125; else if (res.cancel) &#123;
+   console.log(&#39;用户点击取消&#39;)
+ &#125;
+</code></pre>
+<p>   }<br> })<br>},<br>/*</p>
+</li>
+<li><p>错题处理</p>
+</li>
+<li><p>/<br>chooseError: function () {<br> var score = this.data.score;<br> var trueValue = this.data.questionList[this.data.shuffleIndex[this.data.index]][‘true’];<br> var chooseVal = this.data.chooseValue[this.data.index];<br> console.log(‘选择了’ + chooseVal + ‘答案是’ + trueValue);<br> if (chooseVal.toString() != trueValue.toString()) {<br>   wx.showToast({</p>
+<pre><code> title: &#39;回答错误!&#39;,
+ icon: &#39;none&#39;,
+ duration: 2000,
+ success: function () &#123;
+   return;
+ &#125;
+</code></pre>
+<p>   })<br>   console.log(‘错了’);<br>   this.data.wrong++;<br>   this.data.wrongListSort.push(this.data.index);<br>   this.data.wrongList.push(this.data.shuffleIndex[this.data.index]);<br>   this.setData({</p>
+<pre><code> totalScore: this.data.totalScore - this.data.questionList[this.data.shuffleIndex[this.data.index]][&#39;scores&#39;]  // 扣分操作
+</code></pre>
+<p>   })<br> }<br> else{<br>   wx.showToast({</p>
+<pre><code> title: &#39;回答正确!&#39;,
+ icon: &#39;success&#39;,
+ duration: 2000,
+ success: function () &#123;
+   return;
+ &#125;
+</code></pre>
+<p>   })<br>   this.setData({</p>
+<pre><code> score: score+20
+ &#125;)
+</code></pre>
+<p> }<br>},</p>
+</li>
+</ul>
+<p>})</p>
 
       
 
